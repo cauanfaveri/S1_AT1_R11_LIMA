@@ -1,0 +1,171 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* rolagem suave sem JS */
+}
+
+body {
+    background: #f7f7f7;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(90deg, #0033a0, #00a859);
+    color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    opacity: 0.7;
+}
+
+.banner {
+    background: url('img/BannerOfc.png') center/cover no-repeat;
+    text-align: center;
+    color: white;
+    padding: 5rem 1rem;
+    background-blend-mode: darken;
+    background-color: rgba(0,0,0,0.5);
+    animation: fadeIn 1.2s ease;
+}
+
+.banner h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.btn-ofertas {
+    display: inline-block;
+    background: #00a859;
+    color: white;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.btn-ofertas:hover {
+    transform: scale(1.1);
+    background: #00924d;
+}
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.produto {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 1rem;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
+}
+
+.produto:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.produto img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.4s ease;
+}
+
+.produto img:hover {
+    transform: rotate(2deg) scale(1.05);
+}
+
+.produto button {
+    background: #0033a0;
+    color: white;
+    border: none;
+    margin-top: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.produto button:hover {
+    background: #002273;
+}
+
+/* Rodapé */
+footer {
+    background: #0033a0;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivade */
+@media (max-width: 1024px) {
+    .produtos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .banner h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .banner {
+        padding: 3rem 1rem;
+    }
+
+    .produto {
+        padding: 0.8rem;
+    }
+
+    header h1 {
+        font-size: 1.4rem;
+    }
+}
